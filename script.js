@@ -65,30 +65,25 @@ window.addEventListener('load', function(){
    
             
          
-            if(cargoMassInput.value < 10000 && fuelLevelInput.value > 10000){
+            if(cargoMassInput.value <= 10000 && fuelLevelInput.value >= 10000){
                fuelStatus.innerHTML = "Fuel level high enough for launch";
                cargoStatus.innerHTML = "Cargo mass low enough for launch";
                launchStatus.innerHTML = "Shuttle is ready for launch";
                launchStatus.style.color = "green";
-               event.preventDefault();
            }else if(fuelLevelInput.value < 10000 && cargoMassInput.value < 10000){
                fuelStatus.innerHTML = "Fuel level too low for launch";
                cargoStatus.innerHTML = "Cargo mass low enough for launch";
-           event.preventDefault();
            }else if(fuelLevelInput.value < 10000 && cargoMassInput.value > 10000){
             fuelStatus.innerHTML = "Fuel level too low for launch";
             cargoStatus.innerHTML = "Cargo mass too much for launch";
-           event.preventDefault();
            }else if(fuelLevelInput.value > 10000 && cargoMassInput.value > 10000 ){
               fuelStatus.innerHTML = "Fuel level high enough for launch";
               cargoStatus.innerHTML = "Cargo mass too much for launch";
-              event.preventDefault();
            }else if(fuelLevelInput.value > 10000 && cargoMassInput.value < 10000 ){
             fuelStatus.innerHTML = "Fuel level high enough for launch";
             cargoStatus.innerHTML = "Cargo mass low enough for launch";
-            event.preventDefault();
            }
-        
+           event.preventDefault();
       });
    });
 
